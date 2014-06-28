@@ -31,7 +31,7 @@ var formatTime = function(milliseconds) {
 
 var Pomodoro = function(option) {
     var element = document.getElementById("countdown");
-    var workTimer, breakTimer, workTimerState, breakTimerState;
+    var remaining; 
 
     this.start = function(option) {
         targetTime = new Date().setTime(new Date().getTime() + 5000)
@@ -41,13 +41,17 @@ var Pomodoro = function(option) {
     }
 
     var run = function(target) {
-        var remaining = target - new Date;
+        remaining = target - new Date;
         if (remaining <= 0) {
             workTimer.cancel();
             element.innerHTML = "Done";
         } else {
             element.innerHTML = formatTime(remaining); 
         }
+    }
+
+    this.pause = function() {
+        workTimer.cancel();
     }
 }
 
@@ -61,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
             timer.start();
         } else if (this.innerText == "Pause") {
             running = false;
-            this.innerText = "Resume"
+            this.innerText = "Resume";
+            timer.pause()
         } else {
             running = true;
             this.innerText = "Pause";
