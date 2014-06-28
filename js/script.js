@@ -17,10 +17,16 @@ window.accurateInterval = function(time, fn) {
     };
 };
 
-var formatTime = function(seconds) {
-    minutes = Math.floor(seconds / 60);
-    seconds = seconds % 60;
-    return minutes + ":" + seconds; 
+var formatTime = function(milliseconds) {
+    var pad = function(number) {
+        return (number < 10 ?  "0": "") + number; 
+    };
+    var notSecond = milliseconds % 1000;
+    milliseconds = (milliseconds - notSecond) / 1000;
+    var seconds = milliseconds % 60;
+    milliseconds = (milliseconds - seconds) / 60;
+    var mins = milliseconds % 60; 
+    return pad(mins) + ":" + pad(seconds);
 }
 
 var Pomodoro = function(option) {
@@ -40,7 +46,7 @@ var Pomodoro = function(option) {
             workTimer.cancel();
             element.innerHTML = "Done";
         } else {
-            element.innerHTML = remaining; 
+            element.innerHTML = formatTime(remaining); 
         }
     }
 }
