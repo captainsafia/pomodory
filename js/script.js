@@ -31,10 +31,10 @@ var formatTime = function(milliseconds) {
 
 var Pomodoro = function(option) {
     var element = document.getElementById("countdown");
-    var remaining; 
+    var remaining, targetTime, pauseTime;  
 
     this.start = function(option) {
-        targetTime = new Date().setTime(new Date().getTime() + 5000)
+        targetTime = new Date().setTime(new Date().getTime() + 10000)
         workTimer = accurateInterval(function() {
             run(targetTime);
         }, 1000)
@@ -52,6 +52,14 @@ var Pomodoro = function(option) {
 
     this.pause = function() {
         workTimer.cancel();
+        pauseTime = new Date().getTime();
+    }
+
+    this.resume = function() {
+        targetTime = targetTime + (new Date().getTime() - pauseTime);
+        workTimer = accurateInterval(function() {
+            run(targetTime);
+        }, 1000);
     }
 }
 
@@ -70,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         } else {
             running = true;
             this.innerText = "Pause";
+            timer.resume();
         }
     });
 });
