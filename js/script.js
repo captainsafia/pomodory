@@ -31,7 +31,7 @@ var formatTime = function(milliseconds) {
 
 var Pomodoro = function(option) {
     var element = document.getElementById("countdown");
-    var remaining, targetTime, pauseTime;  
+    var remaining, targetTime, pauseTime;
 
     this.start = function(option) {
         targetTime = new Date().setTime(new Date().getTime() + 10000)
@@ -44,7 +44,6 @@ var Pomodoro = function(option) {
         remaining = target - new Date;
         if (remaining <= 0) {
             workTimer.cancel();
-            element.innerHTML = "Done";
         } else {
             element.innerHTML = formatTime(remaining); 
         }

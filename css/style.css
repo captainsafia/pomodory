@@ -25,6 +25,7 @@ span#countdown {
     line-height: 200px;
     position: absolute;
     right: 0; 
+    width: 100%;
 }
 
 button {
