@@ -63,10 +63,18 @@ var Pomodoro = function(option) {
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
-    var button = document.getElementById("controller"); 
     var timer = new Pomodoro();
     var pomodoro = document.getElementById("pomodoro");
     pomodoro.addEventListener('click', function(event) {
         timer.start();
+    });
+    longBreak.addEventListener('click', function(event) {
+        timer.start();
+    });
+    shortBreak.addEventListener('click', function(event) {
+        timer.start();
+    });
+    pause.addEventLisenter('click', function(event) {
+        timer.pause();
     });
 });
