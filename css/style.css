@@ -3,6 +3,7 @@
 body {
     margin: 0;
     background: #ecf0f1;
+    font-family: 'Lato', sans-serif; 
 }
 
 div.main {
@@ -10,7 +11,7 @@ div.main {
     height: 400px;
     top: 50%;
     left: 50%;
-    margin-top: -100px;
+    margin-top: -200px;
     margin-left: -200px; 
     position:fixed;
     text-align: center; 
@@ -24,6 +25,23 @@ div.clock {
 
 div.buttons {
     margin-top: 10px; 
+}
+
+div.options {
+    text-align: left !important;
+    padding: 10px; 
+}
+
+div.options label {
+    display: inline-block; 
+    width: 200px; 
+}
+
+div.options input {
+    display: inline-block;
+    border: 0;
+    margin: 10px; 
+    padding: 5px; 
 }
 
 span#countdown {
