@@ -5,16 +5,25 @@ body {
     background: #ecf0f1;
 }
 
-div.clock {
+div.main {
     width: 400px; 
-    height: 200px;
-    background: #e74c3c;
+    height: 400px;
     top: 50%;
     left: 50%;
     margin-top: -100px;
     margin-left: -200px; 
     position:fixed;
     text-align: center; 
+}
+
+div.clock {
+    background: #e74c3c;
+    width: 400px;
+    height: 200px;
+}
+
+div.buttons {
+    margin-top: 10px; 
 }
 
 span#countdown {
@@ -29,7 +38,6 @@ span#countdown {
 }
 
 button {
-    margin-top: 210px;
     border: 0;
     padding: 20px;
     font-family: "Helevetica", sans-serif;

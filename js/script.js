@@ -65,19 +65,4 @@ var Pomodoro = function(option) {
 document.addEventListener('DOMContentLoaded', function(event) {
     var button = document.getElementById("controller"); 
     var timer = new Pomodoro();
-    button.addEventListener('click', function(event) {
-        if (this.innerText == "Start") {
-            running = true;
-            this.innerText = "Pause";
-            timer.start();
-        } else if (this.innerText == "Pause") {
-            running = false;
-            this.innerText = "Resume";
-            timer.pause()
-        } else {
-            running = true;
-            this.innerText = "Pause";
-            timer.resume();
-        }
-    });
 });
