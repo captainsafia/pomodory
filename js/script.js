@@ -29,12 +29,12 @@ var formatTime = function(milliseconds) {
     return pad(mins) + ":" + pad(seconds);
 }
 
-var Pomodoro = function(option) {
+var Pomodoro = function() {
     var element = document.getElementById("countdown");
     var remaining, targetTime, pauseTime;
 
-    this.start = function(option) {
-        targetTime = new Date().setTime(new Date().getTime() + 10000)
+    this.start = function(duration) {
+        targetTime = new Date().setTime(new Date().getTime() + duration)
         workTimer = accurateInterval(function() {
             run(targetTime);
         }, 1000)
@@ -65,14 +65,17 @@ var Pomodoro = function(option) {
 document.addEventListener('DOMContentLoaded', function(event) {
     var timer = new Pomodoro();
     var pomodoro = document.getElementById("pomodoro");
+    var longBreak = document.getElementById("long_break");
+    var shortBreak = document.getElementById("short_break");
+    var pause = document.getElementById("pause");
     pomodoro.addEventListener('click', function(event) {
-        timer.start();
+        timer.start(7000);
     });
     longBreak.addEventListener('click', function(event) {
-        timer.start();
+        timer.start(6000);
     });
     shortBreak.addEventListener('click', function(event) {
-        timer.start();
+        timer.start(5000);
     });
     pause.addEventLisenter('click', function(event) {
         timer.pause();
