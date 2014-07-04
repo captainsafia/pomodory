@@ -77,7 +77,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
     shortBreak.addEventListener('click', function(event) {
         timer.start(5000);
     });
-    pause.addEventLisenter('click', function(event) {
-        timer.pause();
+    pause.addEventListener('click', function(event) {
+        if (pause.innerText == "Pause") {
+            timer.pause();
+            pause.innerHTML = "Resume";
+        } else {
+            timer.resume();
+            pause.innerHTML = "Pause";
+        }
     });
 });
