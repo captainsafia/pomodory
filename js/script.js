@@ -63,19 +63,24 @@ var Pomodoro = function() {
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
+    var timeOptions = {
+        work: 1200000,
+        short: 300000,
+        long: 600000
+    }
     var timer = new Pomodoro();
     var pomodoro = document.getElementById("pomodoro");
     var longBreak = document.getElementById("long_break");
     var shortBreak = document.getElementById("short_break");
     var pause = document.getElementById("pause");
     pomodoro.addEventListener('click', function(event) {
-        timer.start(7000);
+        timer.start(timeOptions.work);
     });
     longBreak.addEventListener('click', function(event) {
-        timer.start(6000);
+        timer.start(timeOptions.long);
     });
     shortBreak.addEventListener('click', function(event) {
-        timer.start(5000);
+        timer.start(timeOptions.short);
     });
     pause.addEventListener('click', function(event) {
         if (pause.innerText == "Pause") {
