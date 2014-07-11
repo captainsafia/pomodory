@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var longBreak = document.getElementById("long_break");
     var shortBreak = document.getElementById("short_break");
     var pause = document.getElementById("pause");
+    var gear = document.getElementById("options_cog");
     pomodoro.addEventListener('click', function(event) {
         timer.start(timeOptions.work);
     });
@@ -89,6 +90,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
         } else {
             timer.resume();
             pause.innerHTML = "Pause";
+        }
+    });
+    gear.addEventListener('click', function(event) {
+        var options = document.getElementById("options");
+        var style = window.getComputedStyle(options);
+        var display = style.getPropertyValue("display");
+        if (display == "none") {
+            options.style.display = "block";
+        } else {
+            options.style.display = "none";
         }
     });
 });

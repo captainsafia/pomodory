@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title> Pomodoro</title>
     <link rel="stylesheet" href="css/style.css"> 
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="main">
         <div class="clock">
             <span id="countdown">
             </span>
-            <div class="options">
+            <div class="options" id="options">
                 <form>
                     <label for="pomdoro_length"> Pomodoro </label>
                     <input type="number" id="pomodoro_length" name="pomdoro_length" min="5" max="45">
@@ -20,6 +21,7 @@
                     <input type="number" id="short_break_length" name="short_break_length" min="2" max="10">
                 </form>
             </div>
+            <i class="fa fa-cog" id="options_cog"></i> 
         </div>
         <div class="buttons">
             <button id="pomodoro"> Pomodoro </button> 

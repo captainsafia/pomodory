@@ -28,6 +28,7 @@ div.buttons {
 }
 
 div.options {
+    display: none;
     text-align: left !important;
     padding: 10px; 
     width: 300px;
@@ -44,6 +45,11 @@ div.options input {
     display: inline-block;
     border: 0;
     margin: 10px; 
+    padding: 5px; 
+}
+
+i.fa-cog {
+    float: left;
     padding: 5px; 
 }
 
