@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     var shortBreak = document.getElementById("short_break");
     var pause = document.getElementById("pause");
     var gear = document.getElementById("options_cog");
+    var countdown = document.getElementById("countdown");
     pomodoro.addEventListener('click', function (event) {
         timer.start(timeOptions.work);
     });
@@ -101,9 +102,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
         var style = window.getComputedStyle(options);
         var display = style.getPropertyValue("display");
         if (display == "none") {
+            countdown.style.display = "none"
             options.style.display = "block";
         } else {
             options.style.display = "none";
+            countdown.style.display = "block"
             timeOptions.work = minutesToMilliseconds(document.getElementById(
                 "pomodoro_length").value);
             timeOptions.short = minutesToMilliseconds(document.getElementById(
