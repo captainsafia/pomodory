@@ -21,6 +21,7 @@ div.clock {
     background: #e74c3c;
     width: 400px;
     height: 200px;
+    position: relative;
 }
 
 div.buttons {
@@ -49,7 +50,9 @@ div.options input {
 }
 
 i.fa-cog {
-    float: left;
+    left: 0;
+    position: absolute;
+    bottom:0;
     padding: 5px; 
 }
 
