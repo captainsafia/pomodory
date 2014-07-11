@@ -6,7 +6,7 @@ body {
     font-family: 'Lato', sans-serif; 
 }
 
-div.main {
+.main {
     width: 400px; 
     height: 400px;
     top: 50%;
@@ -17,24 +17,25 @@ div.main {
     text-align: center; 
 }
 
-div.clock {
+.clock {
     background: #e74c3c;
     width: 400px;
     height: 200px;
     position: relative;
 }
 
-div.buttons {
+.buttons {
     margin-top: 10px; 
 }
 
-div.options {
+.options {
     display: none;
-    text-align: left !important;
+    text-align: left;
     padding: 10px; 
     width: 300px;
     height: 150px;
     margin: 0 auto;  
+    font-size: 1.5em;
 }
 
 div.options label {
@@ -45,18 +46,18 @@ div.options label {
 div.options input {
     display: inline-block;
     border: 0;
-    margin: 10px; 
+    margin: 15px; 
     padding: 5px; 
 }
 
-i.fa-cog {
+.fa-cog {
     left: 0;
     position: absolute;
     bottom:0;
     padding: 5px; 
 }
 
-span#countdown {
+#countdown {
     font-size: 150px;
     font-family: 'Lato', sans-serif; 
     color: #ecf0f1; 
