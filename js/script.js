@@ -108,12 +108,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
             options.style.display = "none";
             countdown.style.display = "block"
             timeOptions.work = minutesToMilliseconds(document.getElementById(
-                "pomodoro_length").value);
+                "pomodoro_length").value) || timeOptions.work;
             timeOptions.short = minutesToMilliseconds(document.getElementById(
-                "short_break_length").value);
+                "short_break_length").value) || timeOptions.short;
             timeOptions.long = minutesToMilliseconds(document.getElementById(
-                "long_break_length").value);
-            console.log(timeOptions);
+                "long_break_length").value) || timeOptions.long;
         }
     });
 });
